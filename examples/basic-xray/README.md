@@ -68,9 +68,9 @@ zipkin-server_1  | 2020-09-01 01:13:17.650  INFO 1 --- [           main] z.s.Zip
 Till the example demo is built, our `AwsXRayPropagator`,  `AwsXRayIdGenerator` and EC2 detectors (for demo purpose) have not been published, so we need to link the local dependency manually.
 
 ```
-sudo npm link ../../packages/opentelemetry-id-generator-aws-xray
-sudo npm link ../../packages/opentelemetry-propagator-aws-xray
-sudo npm link ../../packages/opentelemetry-resource-detector-aws-demo
+npm link ../../packages/opentelemetry-id-generator-aws-xray
+npm link ../../packages/opentelemetry-propagator-aws-xray
+npm link ../../packages/opentelemetry-resource-detector-aws-demo
 ```
 
 There could be some problems related to this step, I will illustrate them and corresponding solution in the troubleshooting section.
@@ -214,9 +214,9 @@ There are 2 recommended ways to solve this:
 
    Then do `npm link` to [this package](https://github.com/open-telemetry/opentelemetry-js/tree/master/packages/opentelemetry-context-base) in the following order:
 
-   1. Do `sudo npm link ../../../opentelemetry-js/packages/opentelemetry-context-base` under `basic-xray` repository
-   2. Do `sudo npm link ../../packages/opentelemetry-propagator-aws-xray` still under `basic-xray` repository
-   3. Finally do `sudo npm link ../../../opentelemetry-js/packages/opentelemetry-context-base` under `opentelemetry-propagator-aws-xray` repository
+   1. Do `npm link ../../../opentelemetry-js/packages/opentelemetry-context-base` under `basic-xray` repository
+   2. Do `npm link ../../packages/opentelemetry-propagator-aws-xray` still under `basic-xray` repository
+   3. Finally do `npm link ../../../opentelemetry-js/packages/opentelemetry-context-base` under `opentelemetry-propagator-aws-xray` repository
 
    Note that the directory should be consistent with practical use.
 
